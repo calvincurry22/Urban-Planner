@@ -61,6 +61,24 @@ namespace Planner
                 Console.WriteLine($"{localBuilding.Volume} cubic meters of space");
                 Console.WriteLine();
             }
+
+            City Philadelphia = new City("Philadelphia", "Pennsylvania");
+            Philadelphia.Mayor("Jim Kenney");
+            Philadelphia.YearEstablished(1682);
+            Philadelphia.AddBuilding(FiveOneTwoEighth);
+            Philadelphia.AddBuilding(TwoFiveOneDekalb);
+            Philadelphia.AddBuilding(OneFiveTwoNineGreen);
+            Philadelphia.AddBuilding(SixSixThreeFiveMccallum);
+
+            Console.WriteLine("New City");
+            Console.WriteLine($"{Philadelphia.Name}, {Philadelphia.State}");
+            Console.WriteLine($"Year Established: {Philadelphia.ProvideYearEstablished()}");
+            Console.WriteLine($"Current Mayor: {Philadelphia.ProvideMayor()}");
+            Console.WriteLine($"Buildings:");
+            foreach (Building cityBuilding in Philadelphia.Buildings)
+            {
+                Console.WriteLine(cityBuilding.ProvideAddress());
+            }
         }
     }
 }
